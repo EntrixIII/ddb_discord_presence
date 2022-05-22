@@ -15,7 +15,10 @@ DB_misc_t plugin;
 #define trace(...) { deadbeef->log_detailed (&plugin.plugin, 0, __VA_ARGS__); }
 #define trace_err(...) { deadbeef->log ( __VA_ARGS__); }
 
-#define APPLICATION_ID "424928021309554698"
+#define APPLICATION_ID "445201620712685579"
+#define IMAGE "lfm"
+#define PLAY "play_button_clean"
+#define PAUSE "pause"
 #define MAX_LEN 256
 
 DB_functions_t *deadbeef;
@@ -195,7 +198,7 @@ static void updateDiscordPresence(int playback_status, float song_len) {
     }
 
     // misc
-    discordPresence.largeImageKey = "default";
+    discordPresence.largeImageKey = IMAGE;
     discordPresence.smallImageKey = 0;
 
     static const char* artist_keys[4] = { "artist", "album artist", "composer", "performer" };
@@ -224,7 +227,7 @@ static void updateDiscordPresence(int playback_status, float song_len) {
 
     if (playback_status == STATUS_PAUSED) {
         if (deadbeef->conf_get_int("discord_presence.paused_icon", 1))
-            discordPresence.smallImageKey = "paused_circle";
+            discordPresence.smallImageKey = PAUSE;
     }
     //discordPresence.partyId = 0;
     //discordPresence.matchSecret = 0;
