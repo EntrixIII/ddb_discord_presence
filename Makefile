@@ -28,7 +28,7 @@ CFLAGS +=-g -O0
 CXXFLAGS +=-g -O0
 endif
 
-PREFIX=/usr/local/lib/deadbeef
+PREFIX=~/.local/lib/deadbeef/
 ifeq ($(UNAME_S),Darwin)
     PREFIX=$(DEADBEEF_OSX)/Contents/Resources
 endif
